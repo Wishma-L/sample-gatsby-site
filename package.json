@@ -1,0 +1,96 @@
+{
+  "name": "my-gatsby-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "my-gatsby-site",
+  "author": "Wishma Herath",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop -p 3500",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "lint": "yarn eslint ./src ./plugins"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.6.1",
+    "@heroicons/react": "^1.0.6",
+    "@react-keycloak/web": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "autoprefixer": "^10.4.7",
+    "contentful-management": "^10.6.3",
+    "dotenv": "^16.0.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gatsby": "^4.14.1",
+    "gatsby-link": "^4.14.1",
+    "gatsby-plugin-gatsby-cloud": "^4.17.0",
+    "gatsby-plugin-image": "^2.14.1",
+    "gatsby-plugin-manifest": "^4.14.0",
+    "gatsby-plugin-react-helmet": "^5.14.0",
+    "gatsby-plugin-react-i18next": "^1.2.3",
+    "gatsby-plugin-sass": "^5.13.0",
+    "gatsby-plugin-sharp": "^4.13.0",
+    "gatsby-plugin-use-query-params": "^1.0.1",
+    "gatsby-react-router-scroll": "^5.13.0",
+    "gatsby-source-contentful": "^7.11.0",
+    "gatsby-source-custom-api": "2.3.2",
+    "gatsby-source-filesystem": "^4.14.0",
+    "gatsby-source-graphql": "^4.14.0",
+    "gatsby-transformer-sharp": "^4.14.0",
+    "i18next": "^21.8.3",
+    "keycloak-js": "^18.0.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "reach-router": "^0.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.33.1",
+    "react-i18next": "^11.16.9",
+    "sass": "^1.51.0",
+    "swiper": "^8.1.4",
+    "tailwindcss": "^3.0.24",
+    "use-query-params": "^1.2.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.40",
+    "@types/reach__router": "^1.3.10",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.1",
+    "@types/react-helmet": "^6.1.5",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/uuid": "^8.3.4",
+    "contentful-import": "^8.3.0",
+    "danger": "^11.1.4",
+    "danger-plugin-code-coverage": "^1.2.0",
+    "danger-plugin-keepachangelog": "^1.0.5",
+    "danger-plugin-lighthouse": "^0.5.2",
+    "eslint": "^8.26.0",
+    "eslint-config-react-app": "^7.0.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "react-error-overlay": "^6.0.9",
+    "ts-node": "^10.7.0",
+    "typescript": "4.3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,tsx,jsx}": [
+      "yarn lint",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
+}

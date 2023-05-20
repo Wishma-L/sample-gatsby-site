@@ -1,0 +1,21 @@
+name: Danger CI
+on: [pull_request]
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: install yarn
+        run: npm install -g yarn
+      - name: yarn install, build, and test
+        run: |
+          yarn install  --frozen-lockfile
+      # yarn build
+      - name: Danger
+        run: npx danger ci
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

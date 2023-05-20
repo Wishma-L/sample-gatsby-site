@@ -1,0 +1,32 @@
+name: Continuous Integration
+on: push
+jobs:
+  lint:
+    name: Check linting issues
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - name: Install project dependencies
+        run: yarn --prefer-offline
+      # - uses: actions/setup-node@master
+      #   with:
+      #     node-version: 16.x
+      #   env:
+      #     RUNNER_TEMP: /tmp
+      #   # Install package dependencies as defined in package.json file in root of project.
+      # - name: install
+      #   run: yarn install
+
+        # Run `gatsby build`.
+      - name: linting
+        run: yarn lint
+
+# TODO: Add the test folder and check whether that is working
+      # Run the Jest unit tests and generate a coverage report.
+      # - name: test
+      #   run: yarn test -- --coverage

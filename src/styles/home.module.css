@@ -1,0 +1,18 @@
+.bannerSubCardTitle {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.bannerSubCardDescription {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.bannerSubCardbutton {
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 47px;
+  border-color: #E5E5E5;
+  width: 151px;
+  height: 47.37px;
+}

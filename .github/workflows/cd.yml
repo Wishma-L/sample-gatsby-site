@@ -1,0 +1,36 @@
+name: "Continuous Deployment"
+on: 
+  workflow_run: 
+    branches: 
+      - 0.0
+    types: 
+      - completed
+    workflows: 
+      - "Continuous Integration"
+jobs: 
+  deploy: 
+    if: "${{ github.event.workflow_run.conclusion == 'success' }}"
+    runs-on: ubuntu-latest
+    steps: 
+      - 
+        name: Checkout source
+        uses: actions/checkout@v1
+      - 
+        name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - 
+        name: Install project dependencies
+        run: yarn --prefer-offline
+      -  
+        name: Build
+        run: yarn build
+# TODO: Need to configure the deployment here
+      # - 
+      #   name: Deploy to Github Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with: 
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public
